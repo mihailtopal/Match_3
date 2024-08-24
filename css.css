@@ -1,0 +1,516 @@
+button {
+  padding: 5px;
+  margin: 5px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 14px;
+  padding-right: 14px;
+  margin-bottom: 5px;
+  border-radius: 0.3em;
+  border: none;
+  background-color: rgb(177, 176, 176);
+  color: black;
+  font-family: Roboto, sans-serif;
+  text-align: center;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(210, 210, 210);
+}
+button:active {
+  background-color: black;
+  color: whitesmoke;
+}
+h1 {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  font-family: Roboto, sans-serif;
+  font-size: 48px;
+  position: relative;
+  left: 0px;
+}
+.pole {
+  max-height: 90%;
+  position: fixed;
+}
+.bts {
+  display: flex;
+  padding: auto;
+  margin-bottom: 20px;
+  justify-content: center;
+  z-index: 1;
+  position: relative;
+}
+.bts:focus {
+  border: none;
+}
+button.start {
+  width: 100px;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  justify-content: center;
+  align-items: center;
+}
+button.stop {
+  width: 100px;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  justify-content: center;
+  align-items: center;
+}
+button.start:focus {
+  border: none;
+}
+.start {
+  background-color: #009a63;
+  color: whitesmoke;
+  font-size: 24px;
+  font-family: Roboto, sans-serif;
+}
+.start:hover {
+  background-color: #71bc78;
+}
+.start:focus {
+  border: none;
+}
+.stop {
+  background-color: #ff6347;
+  color: whitesmoke;
+  font-size: 24px;
+  font-family: Roboto, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  left: -70px;
+  position: relative;
+}
+body:focus {
+  border: none;
+}
+#scoreValueModal {
+  display: block;
+  height: 30px;
+  padding-left: 5px;
+}
+#bestScoreValue {
+  font-size: 30px;
+  color: black;
+  display: block;
+}
+#scoreValue {
+  font-size: 30px;
+  color: black;
+  display: block;
+}
+.scoreModal {
+  display: flex;
+  position: relative;
+  font-size: 24px;
+}
+.pole {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  position: relative;
+  left: 90px;
+}
+.score {
+  padding-left: 30px;
+  position: relative;
+  font-family: Roboto, sans-serif;
+  font-size: 24px;
+}
+.score > span {
+  margin-top: 10px;
+  margin-bottom: 10px; /* Примерный отступ между элементами */
+}
+
+.game-container {
+  position: relative;
+  border: 2px solid #333;
+  padding: 20px;
+  height: max-content;
+  width: max-content;
+  background-color: #c1c1c17c;
+  margin: 5px;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(10, 70px);
+  grid-template-rows: repeat(10, 70px);
+  gap: 10px;
+  height: max-content;
+  width: max-content;
+  position: relative;
+  align-content: stretch;
+  justify-items: stretch;
+}
+
+#game-board > div:nth-child(n + 4) {
+  display: grid; /* Включаем грид только для строк, начиная с четвёртой */
+}
+
+.empt.dead {
+  background-color: rgba(245, 222, 179, 0);
+  color: #333;
+}
+.cell {
+  background-color: #f0f0f0;
+}
+.cell.dead {
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+}
+.cell.alive-1 {
+  background-color: #88888800;
+  border-radius: 50%;
+}
+.cell.alive-2 {
+  background-color: #88888800;
+  border-radius: 50%;
+}
+.disable_hover {
+  transition: none !important;
+}
+.disable_hover:hover {
+  transform: none !important;
+}
+.cell.alive0 {
+  background: radial-gradient(rgb(57, 245, 57), rgb(6, 145, 6), rgb(1, 81, 1));
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.745);
+}
+
+.cell.alive0:hover {
+  transform: scale(1.2);
+}
+.cell.alive1 {
+  background: radial-gradient(
+    rgb(252, 243, 116),
+    rgb(255, 200, 0),
+    rgb(125, 98, 3)
+  );
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.745);
+}
+
+.cell.alive1:hover {
+  transform: scale(1.2);
+}
+.cell.alive2 {
+  background: radial-gradient(
+    rgb(244, 182, 68),
+    rgb(224, 112, 0),
+    rgb(135, 68, 1)
+  );
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.745);
+}
+
+.cell.alive2:hover {
+  transform: scale(1.2);
+}
+.cell.alive3 {
+  background: radial-gradient(rgb(239, 49, 49), rgb(198, 13, 0), rgb(79, 6, 1));
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.745);
+}
+
+.cell.alive3:hover {
+  transform: scale(1.2);
+}
+.cell.alive4 {
+  background: radial-gradient(rgb(53, 84, 240), rgb(13, 1, 227), rgb(6, 1, 96));
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.745);
+}
+
+.cell.alive4:hover {
+  transform: scale(1.2);
+}
+.cell.alive5 {
+  background: radial-gradient(
+    rgb(184, 91, 246),
+    rgb(148, 4, 244),
+    rgb(84, 1, 139)
+  );
+
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.745);
+}
+
+.cell.alive5:hover {
+  transform: scale(1.2);
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.explode {
+  animation: explode 0.5s ease-in-out;
+}
+.cell.alive_clicked {
+  transition: transform 0.2s ease-in-out;
+  animation: pulse 1s infinite;
+}
+.alive_negative {
+  animation: swing 0.35s ease-in-out 2;
+}
+.move_falling {
+  animation: moveAnimationFalling 0.1s ease-in-out;
+}
+.move_right {
+  animation: moveAnimationRight 0.5s ease-in-out;
+}
+.move_left {
+  animation: moveAnimationLeft 0.5s ease-in-out;
+}
+.move_top {
+  animation: moveAnimationTop 0.5s ease-in-out;
+}
+.move_bottom {
+  animation: moveAnimationBottom 0.5s ease-in-out;
+}
+.move_right_to_left {
+  animation: moveAnimationRightToLeft 0.5s ease-in-out;
+}
+.move_left_to_right {
+  animation: moveAnimationLeftToRight 0.5s ease-in-out;
+}
+.move_up_to_down {
+  animation: moveAnimationUpToDown 0.5s ease-in-out;
+}
+.move_down_to_up {
+  animation: moveAnimationDownToUp 0.5s ease-in-out;
+}
+@keyframes explode {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.7);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes moveAnimationRight {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(80px, 0);
+  }
+}
+@keyframes moveAnimationRightToLeft {
+  0% {
+    transform: translate(0, 0);
+  }
+  40% {
+    transform: translate(80px, 0);
+  }
+  60% {
+    transform: translate(80px, 0);
+  }
+  100% {
+    transform: translate(0px, 0);
+  }
+}
+@keyframes moveAnimationLeftToRight {
+  0% {
+    transform: translate(0, 0);
+  }
+  40% {
+    transform: translate(-80px, 0);
+  }
+  60% {
+    transform: translate(-80px, 0);
+  }
+  100% {
+    transform: translate(0px, 0);
+  }
+}
+@keyframes moveAnimationUpToDown {
+  0% {
+    transform: translate(0, 0);
+  }
+  40% {
+    transform: translate(0, 80px);
+  }
+  60% {
+    transform: translate(0, 80px);
+  }
+  100% {
+    transform: translate(0px, 0);
+  }
+}
+@keyframes moveAnimationDownToUp {
+  0% {
+    transform: translate(0, 0);
+  }
+  40% {
+    transform: translate(0, -80px);
+  }
+  60% {
+    transform: translate(0, -80px);
+  }
+  100% {
+    transform: translate(0px, 0);
+  }
+}
+@keyframes moveAnimationLeft {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-80px, 0);
+  }
+}
+@keyframes moveAnimationTop {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 80px);
+  }
+}
+@keyframes moveAnimationBottom {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, -80px);
+  }
+}
+@keyframes moveAnimationFalling {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 40px);
+  }
+  100% {
+    transform: translate(0, 80px);
+  }
+}
+@keyframes swing {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(
+      10px
+    ); /* или любое другое значение, определяющее расстояние покачивания */
+  }
+}
+.start {
+  display: block;
+}
+.row {
+  background-color: #f0f0f0;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 50px; /* Обновленный паддинг сверху */
+}
+
+.modal-content {
+  border-radius: 2em;
+  display: flex;
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 15px;
+  border: 1px solid #888;
+  width: 70%;
+  max-width: 500px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+#next-piece {
+  display: grid;
+  grid-template-columns: repeat(4, 30px);
+  grid-template-rows: repeat(3, 30px);
+}
+
+#next-piece > div {
+  box-sizing: border-box; /* Учтите размер границы в общем размере ячейки */
+  width: calc(30px - 1px); /* Размер ячейки с учетом промежутка */
+  height: calc(30px - 1px);
+}
